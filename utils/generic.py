@@ -7,6 +7,7 @@ import numpy as np
 def set_seed(params):
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
+    
     random.seed(params.seed)
     os.environ['PYTHONHASHSEED'] = str(params.seed)
     np.random.seed(params.seed)

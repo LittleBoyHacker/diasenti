@@ -1,0 +1,2 @@
+,acc,dataset,f1,modality,model_dir_name,network
+0,0.5888888888888889,meld,0.565689977930748,"textual,acoustic",1608199124,qmutitask

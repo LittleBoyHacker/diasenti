@@ -52,8 +52,6 @@ class QMPN(nn.Module):
         for embed_dim in self.embed_dims:
             self.recurrent_dim = self.recurrent_dim*embed_dim
         self.recurrent_cells = nn.ModuleList([QRNNCell(self.recurrent_dim, device = self.device)]*self.num_layers)
-        self.out_dropout = QDropout(p=self.out_dropout_rate)
-        self.activation = QActivation(scale_factor = 1,beta = 0.8)
         
         self.measurement = QMeasurement(self.recurrent_dim)
         self.fc_out = SimpleNet(self.recurrent_dim, self.output_cell_dim,
@@ -97,7 +95,7 @@ class QMPN(nn.Module):
         multimodal_pure = self.state_product(unimodal_pure)
         in_states = self.outer(multimodal_pure)
         
-        # Take the amplitudes 
+        # Take the amplitudes
         # multiply with modality specific vectors to construct weights
         #weights = [self.norm(rep) for rep in utterance_reps]
         #weights = F.softmax(torch.cat(weights, dim = -1), dim = -1)

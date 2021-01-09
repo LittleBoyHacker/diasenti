@@ -1,0 +1,2 @@
+,acc,dataset,f1,modality,model_dir_name,network
+0,0.5625385089340728,iemocap,0.5618219914972552,"textual,acoustic,visual",best/dialogue,bc-lstm
