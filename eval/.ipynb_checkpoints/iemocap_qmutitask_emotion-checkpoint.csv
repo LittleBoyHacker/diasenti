@@ -1,0 +1,2 @@
+,acc,dataset,f1,modality,model_dir_name,network
+0,0.5372766481823783,iemocap,0.5368579693410732,"textual,acoustic,visual",1609211128,qmutitask
